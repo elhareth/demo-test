@@ -1,0 +1,47 @@
+// Override Bootstrap variables before import
+$theme_primary: #28a745;
+$theme-secondary: #e7d152;
+
+
+// Then import Bootstrap
+$enable-rtl: true; // Enable RTL processing
+@import "bootstrap/scss/bootstrap";
+
+.bg-theme-primary {
+  background-color: $theme_primary !important;
+}
+
+.btn-join {
+  @extend .btn-success;
+  background-color: $theme_primary;
+
+  &:hover {
+    background-color: darken($color: $theme_primary, $amount: 10%);
+  }
+}
+
+.theme-navbar-primary {
+  background-color: $theme_primary;
+
+  .nav-link {
+    color: lighten($color: $theme_primary, $amount: 50%); // Setting text color for links
+    &:hover {
+      color: darken($color: $theme_primary, $amount: 25%); // Change color on hover
+    }
+  }
+}
+
+[data-bs-theme="dark"] {
+  .btn-join {
+    @extend .btn-outline-success;
+    background: transparent;
+    color: lighten($theme_primary, 20%);
+    &:hover {
+      background-color: $theme_primary;
+      color: $light;
+    }
+  }
+  .investment-label {
+    color: $light;
+  }
+}
