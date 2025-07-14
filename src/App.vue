@@ -4,6 +4,7 @@
     <HeroSection />
     <InvestsSection />
     <StatsSection />
+    <AboutSection />
     <ContactSection />
     <FooterSection />
 
@@ -16,6 +17,12 @@
   </div>
 </template>
 
+
+<script setup>
+import ar from "./locales/ar.json";
+
+document.title = ar.site.label;
+</script>
 
 <style>
 html {
@@ -55,7 +62,7 @@ main {
 <script>
 import NavBar from './components/NavBar.vue'
 import HeroSection from './components/HeroSection.vue'
-import StatsSection from './components/StatsSection.vue'
+import AboutSection from "./components/AboutSection.vue";
 import FooterSection from './components/FooterSection.vue'
 import InvestsSection from './components/InvestsSection.vue'
 import ContactSection from './components/ContactSection.vue'
@@ -67,7 +74,7 @@ export default {
   components: {
     NavBar,
     HeroSection,
-    StatsSection,
+    AboutSection,
     FooterSection,
     ContactSection,
     InvestsSection

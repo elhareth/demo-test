@@ -1,6 +1,6 @@
 <template>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark theme-navbar-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark theme-navbar-primary fixed-top">
         <div class="container">
             <router-link class="navbar-brand fw-bold" to="/">{{ $t("site.label") }}</router-link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -9,22 +9,18 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <!-- <router-link class="nav-link" to="/">{{ $t('navbar.links.home') }}</router-link> -->
-                        <a class="nav-link" to="/">{{ $t('navbar.links.home') }}</a>
+                        <a href="#hero" class="nav-link" to="/">{{ $t('navbar.links.home') }}</a>
                     </li>
                     <li class="nav-item">
-                        <!-- <router-link class="nav-link" to="/projects">{{ $t('navbar.links.projects') }}</router-link> -->
-                        <a class="nav-link" to="/projects">{{ $t('navbar.links.projects') }}</a>
+                        <a href="#investments" class="nav-link" to="/projects">{{ $t('navbar.links.investments') }}</a>
                     </li>
                     <li class="nav-item">
-                        <!-- <router-link class="nav-link" to="/about">{{ $t('navbar.links.about') }}</router-link> -->
-                        <a class="nav-link" to="/about">{{ $t('navbar.links.about') }}</a>
+                        <a href="#about" class="nav-link" to="/about">{{ $t('navbar.links.about') }}</a>
                     </li>
                     <li class="nav-item">
-                        <!-- <router-link class="nav-link" to="/contact">{{ $t('navbar.links.contact') }}</router-link> -->
-                        <a class="nav-link" to="/contact">{{ $t('navbar.links.contact') }}</a>
+                        <a href="#contact" class="nav-link" to="/contact">{{ $t('navbar.links.contact') }}</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item d-none">
                         <button :class="buttonClass" @click="toggleTheme">
                             <font-awesome-icon :icon="icon" />
                             {{ isDarkMode ? '' : '' }}
@@ -43,13 +39,16 @@
 
 <style>
 .navbar-brand {
-    font-family: "Noto Kufi Arabic";
+    font-family: "Cairo";
+    font-weight: bolder !important;
+    color: rgba(169, 247, 227, 0.795) !important;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
 }
 </style>
 
 <script setup>
 import { ref, computed } from 'vue';
-// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 const isDarkMode = ref(localStorage.getItem('theme') === 'dark');
 

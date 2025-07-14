@@ -8,6 +8,7 @@ import './assets/styles/custom.scss'
 import 'bootstrap'
 // import 'bootstrap-rtl'
 import 'animate.css'
+// import animate from 'animate.css'
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
